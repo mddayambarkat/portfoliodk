@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    {% load staticfiles %}
+
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <meta content="" name="description">
+    <meta content="Mark Otto, Jacob Thornton, and Bootstrap contributors" name="author">
+    <meta content="Jekyll v3.8.6" name="generator">
+    <title>Md Dayam Barkat</title>
+
+
+    <!-- Bootstrap core CSS -->
+    <
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" rel="stylesheet">
+
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href=" {% url 'home'%}">Md Dayam Barkat</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav ml-auto">
+      <a class="nav-item nav-link " href="http://twitter.com/@dayam_md">Twitter </a>
+      <a class="nav-item nav-link" href="#">Resume</a>
+      <a class="nav-item nav-link" href="{% url 'allblogs' %}">blog</a>
+
+    </div>
+  </div>
+</nav>
+</header>
+
+<main role="main">
+
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1>hi, i am Md Dayam</h1>
+            <p class="lead text_muted">hii,my name is Md Dayam barkat and i love to work with django framework,it's just wow</p>
+            <p>
+                <a class="btn btn-primary my-2" href="mailto:barkatddayam1999@gmail.com">Email Me</a>
+
+            </p>
+            <img src ="{% static 'dayam.jpg.jpg' %}" height="300" />
+
+        </div>
+    </section>
+
+    <div class="album py-5 bg-light">
+        <div class="container">
+
+            <div class="row">
+                {% for job in jobs.all%}
+                 <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+              <img class="card-img-top" src="{{ job.image.url }}" />
+              <div class="card-body">
+                <p class="card-text">{{ job.summary }}</p>
+              </div>
+            </div>
+          </div>
+                {% endfor %}
+
+
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<footer class="text-muted">
+    <div class="container text-center">
+       <p>© Md Dayam Barkat {% now "Y"%}</p>
+    </div>
+</footer>
+
+<script crossorigin="anonymous"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>
